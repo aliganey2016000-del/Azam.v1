@@ -19,7 +19,7 @@ export const LoginPage: React.FC = () => {
     setLoading(true);
     try {
       await login(email, password);
-      navigate('/dashboard');
+      navigate('/portal');
     } catch (err: any) {
       setError(err?.response?.data?.error?.message || 'Invalid credentials');
     } finally {
@@ -31,7 +31,7 @@ export const LoginPage: React.FC = () => {
     setLoading(true);
     await switchDemoRole(role);
     setLoading(false);
-    navigate('/dashboard');
+    navigate('/portal');
   };
 
   return (
